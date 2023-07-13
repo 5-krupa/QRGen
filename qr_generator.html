@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		#box{
+			height: 750px;
+			width: 100%;
+			background-color: lightgrey;
+			float: left;
+		}
+		h1{
+			margin-top: 30px;
+		}
+		p{
+			margin-top: 30px;
+		}
+		#width{
+			height: 30px;
+			width: 200px;
+			border-radius: 2px;
+			margin-top: 40px;
+            margin-right: 50px;
+		}
+		#height{
+			height: 30px;
+			width: 200px;
+			border-radius: 2px;
+			margin-top: 40px;
+		}
+		#labwid{
+			margin-left: 500px;
+		}
+		#data{
+			margin-left: 500px;
+
+		}
+		#textarea{
+			margin-left: 550px;
+			height: 200px;
+			width: 500px;
+			float: left;
+			margin-top: 10px;
+		}
+		#generate{
+			height: 30px;
+			width: 100px;
+			background-color: blueviolet;
+			color: white;
+			border-radius: 5px;
+			margin-left: 750px;
+			float: left;
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+<div id="box">
+	<h1 style="text-align:center; ">QR Code Generator</h1>
+	<p style="text-align:center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	<label id="labwid">Width</label>
+	<input type="number" placeholder="width" id="width">
+	<label id="labhei">Height</label>
+	<input type="number" placeholder="height" id="height"><br><br>
+	<label id="data">Data</label>
+	<textarea id="textarea"></textarea><br>
+	<button id="generate">Generate</button>
+</div>
+<script type="text/javascript" src="cdn/jquery-3.6.3.js"></script>
+<script type="text/javascript" src="cdn/jquery-3.6.3.min.js"></script>
+<script type="text/javascript" src="cdn/jquery-3.6.3.slim.js"></script>
+<script type="text/javascript" src="cdn/jquery-3.6.3.slim.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#generate').click(function(){
+			var width= $('#width').val();
+			var height= $('#height').val();
+			var data= $('#data').val();
+
+
+			var img= '<img style = "margin : 0 auto" src="https://chart.googleapis.com/chart?chs='+width+'x'+height+'&cht=qr&chl='+data+'">';
+
+			$("#box").html(img);
+
+		});
+	});
+</script>
+</body>
+</html>
